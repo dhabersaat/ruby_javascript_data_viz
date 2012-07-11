@@ -24,8 +24,7 @@
     });
 });
 </script>
-
-
+<a href="#" data-hide-element='chart'>Chart</a>
 
 <h2> Products in the market </h2>
 
@@ -50,6 +49,11 @@
   </tbody>
 </table>
 
+<script type='text/javascript'>
+  $('[data-hide-element=chart]').on('click', function(){
+      $('#highChartContainer').toggle()
+    });
+</script>
 
 
    
