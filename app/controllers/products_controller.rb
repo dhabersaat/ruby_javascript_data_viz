@@ -35,14 +35,14 @@ class ProductsController < ApplicationController
   	@product = Product.where(:id => params[:id]).first
 
  		respond_to do |format|
-      if @product.update_attributes(params[:product])
-    		format.html { redirect_to :back, :notice => 'Product was successfully updated.' }
-    		format.json { render json: @product }
-      else
-      	format.html { render action: "edit" }
-      	format.json { render json: @product.errors, :status => :unprocessable_entity }
-      end
-  	end
+  			if @product.update_attributes(params[:product])
+  			  format.html { redirect_to :back, :notice => 'Product was successfully updated.' }
+    			format.json { render json: @product }
+ 			else
+  				format.html { render action: "edit" }
+    			format.json { render json: @product.errors, :status => :unprocessable_entity }
+  			end
+			end
 	end
 
 	def destroy
